@@ -1,4 +1,5 @@
 import players
+import banker
 import game
 
 if __name__ == "__main__":
@@ -6,7 +7,9 @@ if __name__ == "__main__":
     # player = players.Player()
     # player = players.MedianDeal()
     player = players.Optimization()
-    g = game.Game(player)
+    # banker = banker.Banker()
+    b = banker.EmulateRealBanker()
+    g = game.Game(player, b)
     for _ in range(100000):
         won.append(g.play())
         g.reset()

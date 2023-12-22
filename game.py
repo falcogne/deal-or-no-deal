@@ -3,18 +3,14 @@ import board
 import banker
 
 class Game():
-    def __init__(self, player : players.Player):
-        self.NUMBER_TO_CHOOSE = [5, 5, 3, 3, 2, 1]
-        self.board = board.Board()
-        self.banker = banker.Banker()
+    def __init__(self, player : players.Player, banker : banker.Banker):
         self.player = player
-        self.values_unopened = [v for v in self.board.VALUES]
-        assert sum(self.NUMBER_TO_CHOOSE) == len(self.board.VALUES)-2
+        self.reset()
     
     def reset(self):
-        self.NUMBER_TO_CHOOSE = [5, 5, 3, 3, 2, 1]
+        self.NUMBER_TO_CHOOSE = [6,5,4,3,2,1,1,1,1]
         self.board = board.Board()
-        self.banker = banker.Banker()
+        self.banker = banker.EmulateRealBanker()
         self.player.my_case = None
         self.values_unopened = [v for v in self.board.VALUES]
         assert sum(self.NUMBER_TO_CHOOSE) == len(self.board.VALUES)-2
