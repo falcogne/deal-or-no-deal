@@ -5,12 +5,12 @@ import banker
 class Game():
     def __init__(self, player : players.Player, banker : banker.Banker):
         self.player = player
+        self.banker = banker
         self.reset()
     
     def reset(self):
         self.NUMBER_TO_CHOOSE = [6,5,4,3,2,1,1,1,1]
         self.board = board.Board()
-        self.banker = banker.EmulateRealBanker()
         self.player.my_case = None
         self.values_unopened = [v for v in self.board.VALUES]
         assert sum(self.NUMBER_TO_CHOOSE) == len(self.board.VALUES)-2
