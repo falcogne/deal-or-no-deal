@@ -1,4 +1,4 @@
-# deal-or-no-deal
+# deal or no deal
 create ai to play deal or no deal - may also turn into a analysis of how banker creates deals
 
 I think it may be better to take the deal than you'd think, so I want to really figure out what deals are good.
